@@ -1,0 +1,25 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/" # Localização do package.json
+    schedule:
+      interval: "weekly" # Pode ser "daily", "weekly" ou "monthly"
+      day: "sunday" # Define o dia da semana para atualizações semanais
+      time: "04:00" # Horário UTC das atualizações
+    open-pull-requests-limit: 5 # Limita a 5 PRs abertas ao mesmo tempo
+    labels:
+      - "dependencies"
+      - "npm"
+    reviewers:
+      - "seu-usuario-github" # Substitua pelo seu usuário do GitHub
+    assignees:
+      - "seu-usuario-github"
+    commit-message:
+      prefix: "chore(deps):"
+      include: "scope"
+    rebase-strategy: "auto"
